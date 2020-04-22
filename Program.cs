@@ -37,8 +37,6 @@ namespace Language_of_Hanoi {
 			//The path that is provided by the arguments
 			string path = "";
 
-			args = new string[]{@"C:\Users\MeSoP\Desktop\test.hanoi"};
-
 			//Checks whether an argument is provided
 			if (args.Length == 0) {
 				ThrowError("Argument Error: a path has to be provided as an argument");
