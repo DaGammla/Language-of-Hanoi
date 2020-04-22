@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Language of Hanoi",
+	"patterns": [
+		{
+			"name": "keyword.control.hanoi",
+			"match": "(?i)\\b(case|else|loop|seal|exit|skip|func|file)\\b"
+		},
+		{
+			"name": "keyword.hanoi",
+			"match": "(?i)\\b(dump|stow|copy|take|type|give|read|exec|turn|wait|open|size)\\b"
+		},
+		
+		{
+			"name": "keyword.operator.hanoi",
+			"match": "[=<>!]"
+		},
+		{
+			"name": "keyword.hanoi",
+			"match": "(?i)\\b(add|sub|mul|div|rem|pow|shl|shr|abs|and|xor|bor|not)\\b"
+		},
+		{
+			"name": "string.quoted.double.hanoi",
+			"begin": "\"",
+			"end": "\""
+		},
+		{
+			"name": "string.quoted.single.hanoi",
+			"begin": "'",
+			"end": "'"
+		},
+		{
+			"name": "comment.double-slash.hanoi",
+			"begin": "//",
+			"end": "$"
+		},
+		{
+			"name": "constant.numeric.hanoi",
+			"match": "[0-9]"
+		},
+		{
+			"name": "variable.language.hanoi",
+			"match": "\\b(((?i)(ever))|A|B|C|S|!A|!B|!C|!S)\\b"
+		}
+	],
+	"repository": {
+		
+	},
+	"scopeName": "source.hanoi"
+}

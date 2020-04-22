@@ -1,0 +1,25 @@
+{
+    "name": "language-of-hanoi",
+    "displayName": "Language of Hanoi",
+    "description": "Adds Support for Language of Hanoi",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "hanoi",
+            "aliases": ["Language of Hanoi", "hanoi"],
+            "extensions": [".hanoi"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "hanoi",
+            "scopeName": "source.hanoi",
+            "path": "./syntaxes/hanoi.tmLanguage.json"
+        }]
+    }
+}
