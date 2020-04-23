@@ -309,6 +309,13 @@ namespace Language_of_Hanoi {
 						continue;
 					}
 
+					case "SKIP": {
+						if (parameter != "") {
+							ThrowAllowedParameterException(instruction, fileName, lineId);
+						}
+						return new SkipValue();
+					}
+
 					case "EXIT": {
 
 						if (parameter != "") {
@@ -316,13 +323,6 @@ namespace Language_of_Hanoi {
 						} else {
 							return new ExitValue();
 						}
-					}
-
-					case "SKIP": {
-						if (parameter != "") {
-							ThrowAllowedParameterException(instruction, fileName, lineId);
-						}
-						return new SkipValue();
 					}
 
 					case "FUNC": {
@@ -380,7 +380,6 @@ namespace Language_of_Hanoi {
 					case "WAIT": {
 						if(parameter == "")
 							ThrowParameterException(instruction, parameter, fileName, lineId);
-
 
 						int sleepTime = GetNumber(parameter, instruction, fileName, lineId);
 						if (sleepTime >= 0) {
@@ -581,6 +580,10 @@ namespace Language_of_Hanoi {
 
 						int num = GetNumber(parameter, instruction, fileName, lineId);
 
+						if (num < 0) {
+							ThrowParameterException(instruction, parameter, fileName, lineId);
+						}
+
 						slot = new ReturnValue(slot.GetValue() << num);
 
 						continue;
@@ -594,6 +597,10 @@ namespace Language_of_Hanoi {
 						}
 
 						int num = GetNumber(parameter, instruction, fileName, lineId);
+
+						if (num < 0) {
+							ThrowParameterException(instruction, parameter, fileName, lineId);
+						}
 
 						slot = new ReturnValue(slot.GetValue() >> num);
 
