@@ -4,11 +4,11 @@
 	"patterns": [
 		{
 			"name": "keyword.control.hanoi",
-			"match": "(?i)\\b(case|else|loop|seal|exit|skip|func|file)\\b"
+			"match": "(?i)\\b(case|else|loop|seal|exit|skip|func|text)\\b"
 		},
 		{
 			"name": "keyword.hanoi",
-			"match": "(?i)\\b(dump|stow|copy|take|type|give|read|exec|turn|wait|open|size)\\b"
+			"match": "(?i)\\b(dump|stow|copy|take|type|give|read|exec|turn|wait|open|size|file)\\b"
 		},
 		
 		{
@@ -41,6 +41,11 @@
 		{
 			"name": "variable.language.hanoi",
 			"match": "\\b(((?i)(ever))|A|B|C|S|!A|!B|!C|!S)\\b"
+		},
+		{
+			"contentName": "entity.name.function.hanoi",
+			"begin": "(?i)\\b(func|exec)\\b",
+			"end": "$"
 		}
 	],
 	"repository": {

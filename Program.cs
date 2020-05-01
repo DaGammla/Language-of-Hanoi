@@ -433,8 +433,8 @@ namespace Language_of_Hanoi {
 
 						continue;
 					}
-					
-					case "FILE": {
+
+					case "TEXT": {
 						if (parameter.Length > 2 && parameter.StartsWith('"') && parameter.EndsWith('"')) {
 							string path = parameter.Substring(1, parameter.Length - 2);
 
@@ -457,7 +457,7 @@ namespace Language_of_Hanoi {
 									fileContents = File.ReadAllText(path);
 								}
 
-								
+
 								string[] subLines = lines.SubArray(i + 1, corredpondingSeal - 1);
 
 								for (int j = 0; j < fileContents.Length; j++) {
@@ -477,6 +477,43 @@ namespace Language_of_Hanoi {
 								i = corredpondingSeal;
 
 							} catch {
+								ThrowErrorEase("Access Error: could not open file : \"" + path + "\"", fileName, lineId);
+							}
+
+						} else {
+							ThrowParameterException(instruction, parameter, fileName, lineId);
+						}
+
+						continue;
+					}
+
+					case "FILE": {
+						if (parameter.Length > 2 && parameter.StartsWith('"') && parameter.EndsWith('"')) {
+							string path = parameter.Substring(1, parameter.Length - 2);
+
+							try {
+								FileInfo file = new FileInfo(path);
+								if (file.Exists) {
+
+									var p = new System.Diagnostics.Process();
+									p.StartInfo = new System.Diagnostics.ProcessStartInfo(path) {
+										UseShellExecute = true
+									};
+									p.Start();
+
+								} else {
+
+									path = Regex.Replace(new FileInfo(fileName).Directory.FullName + "/" + path, @"[\\/]+", "/");
+
+									var p = new System.Diagnostics.Process();
+									p.StartInfo = new System.Diagnostics.ProcessStartInfo(path) {
+										UseShellExecute = true
+									};
+									p.Start();
+								}
+
+							} catch (Exception e) {
+								Console.WriteLine(e);
 								ThrowErrorEase("Access Error: could not open file : \"" + path + "\"", fileName, lineId);
 							}
 
@@ -817,7 +854,7 @@ namespace Language_of_Hanoi {
 			return -1;
 		}
 
-		static string[] sealInstructions = { "CASE", "FUNC", "LOOP", "FILE", "ELSE" };
+		static string[] sealInstructions = { "CASE", "ELSE", "LOOP", "FUNC", "TEXT"  };
 
 		static bool doesNeedSeal(string instruction) {
 			foreach (string sealInstruction in sealInstructions) {
