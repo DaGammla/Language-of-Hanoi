@@ -271,7 +271,7 @@ seal      //This loop counts the seconds passed since the start of the programm.
 ### OPEN:
 Parameters: `String`  
 Description:  
-Executes the script file of the given path, if it's present. If the file returns a value, it is stored to the SLOT (S). The string that provides the path does not support escape sequences. The path may be absolute or relative to the current file. The same stacks and the same SLOT (S) are shared among all files.  
+Executes the script file of the given path, if it's present. If the file returns a value, it is stored to the SLOT (S). The string that provides the path does not support escape sequences. The path may be absolute or relative to the current file. The same stacks and the same SLOT (S) are shared among all script files.  
 Example:  
 ```
 open "script1.hanoi"   //Open file from relative path
@@ -280,7 +280,7 @@ open "C:/Users/Max/Desktop/script2.hanoi"    //Open file from absolute path
 
 ***
 
-### FILE:
+### TEXT:
 Parameters: `String`  
 Uses seal block  
 Description:  
@@ -288,10 +288,22 @@ Opens the text file of the given path, if it's present. Then, for each character
 Example:  
 ```
 dump    //Clearing slot, so the next character can be taken
-file "example.txt"    //Open the file
+text "example.txt"    //Open the file
     type    //Type The character to the console
     dump    //Clearing slot, so the next character can be taken and it does not throw an exception
 seal    //This file loop prints the contents of the file "example.txt" to the console
+```
+
+***
+
+### FILE:
+Parameters: `String`  
+Description:  
+Opens the file of the given path, if it's present, with the default application picked by the operating system. The path may be absolute or relative to the current file.  
+Example:  
+```
+file "image.jpg"    //Open an image file
+file "script.bat"   //Run a batch script
 ```
 
 ## Operators
