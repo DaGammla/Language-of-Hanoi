@@ -220,7 +220,7 @@ seal            //End of Function
 ### EXEC:
 Parameters: `Function Name`  
 Description:  
-Executes the function with the given function name, if it's present. If the function returns a value, it is stored to the SLOT (S).  
+Executes the function with the given function name, if it is present. If the function returns a value, it is stored to the SLOT (S).  
 Example:  
 ```
 copy 5
@@ -271,7 +271,7 @@ seal      //This loop counts the seconds passed since the start of the programm.
 ### OPEN:
 Parameters: `String`  
 Description:  
-Executes the script file of the given path, if it's present. If the file returns a value, it is stored to the SLOT (S). The string that provides the path does not support escape sequences. The path may be absolute or relative to the current file. The same stacks and the same SLOT (S) are shared among all script files.  
+Executes the script file of the given path, if it is present. If the file returns a value, it is stored to the SLOT (S). The string that provides the path does not support escape sequences. The path may be absolute or relative to the current file. The same stacks and the same SLOT (S) are shared among all script files.  
 Example:  
 ```
 open "script1.hanoi"   //Open file from relative path
@@ -284,7 +284,7 @@ open "C:/Users/Max/Desktop/script2.hanoi"    //Open file from absolute path
 Parameters: `String`  
 Uses seal block  
 Description:  
-Opens the text file of the given path, if it's present. Then, for each character inside the text file, it is stored to the SLOT (S) and then the instructions between the file and the seal instructions are executed, which means at the beginning of the file loop the slot always has to be empty. It can be exited with an exit instruction and single characters can be skipped with a skip instruction. The string that provides the path does not support escape sequences. The path may be absolute or relative to the current file.  
+Opens the text file of the given path, if it is present. Then, for each character inside the text file, it is stored to the SLOT (S) and then the instructions between the file and the seal instructions are executed, which means at the beginning of the file loop the slot always has to be empty. It can be exited with an exit instruction and single characters can be skipped with a skip instruction. The string that provides the path does not support escape sequences. The path may be absolute or relative to the current file.  
 Example:  
 ```
 dump    //Clearing slot, so the next character can be taken
@@ -299,7 +299,7 @@ seal    //This file loop prints the contents of the file "example.txt" to the co
 ### FILE:
 Parameters: `String`  
 Description:  
-Opens the file of the given path, if it's present, with the default application picked by the operating system. The path may be absolute or relative to the current file.  
+Opens the file of the given path, with the default application picked by the operating system if it is present. The path may be absolute or relative to the current file.  
 Example:  
 ```
 file "image.jpg"    //Open an image file
