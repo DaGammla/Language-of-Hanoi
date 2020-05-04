@@ -4,6 +4,9 @@
 Language of Hanoi is a simple scripting language based on the [Tower of Hanoi Puzzle](https://en.wikipedia.org/wiki/Tower_of_Hanoi). Like in the game, in this scripting language, there are three stacks on which values can be stored, called A, B and C. Another value can also be stored in the SLOT, represented in the script by an S. Many Instructions and all the operators are performed on the value held by the SLOT. 
 
 ### Stacks
+In this language, you have 3 stacks on which you can store values. Only the last stored value of every stack can be accessed. This is done with either the copy instruction, that copies the top value of the stack to the SLOT (S), or the take instruction, that moves the value away from the stack and onto the SLOT.  
+The stacks can be accessed by their identifiers A, B and C. With the turn instruction, the identifiers can be changed around.  
+When a stack is empty but is tried to be accessed, it throws a stack empty exception.  
 
 ### Slot
 
@@ -17,7 +20,7 @@ Language of Hanoi is a simple scripting language based on the [Tower of Hanoi Pu
 
 The script files of this language are usually stored with the "hanoi" extension. Like "script.hanoi".  
 Instructions can be written in uppercase, lowercase and even mixed but should be written in lowercase.  
-Function names can contain special characters and can contain letters of any case. However, the convention is that they do not contain special characters and start with a lowercase character. Every other word inside the function name should begin with an uppercase letter. Like "printEntireStack".
+Function names can contain special characters and can contain letters of any case. However, the convention is that they do not contain special characters and start with a lowercase character. Every other word inside the function name should begin with an uppercase letter. Like "printEntireStack".  
   
 ## Instructions
 ### DUMP:
