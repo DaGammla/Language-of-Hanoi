@@ -1,7 +1,7 @@
 # Language of Hanoi
 
 ## Basics
-Language of Hanoi is a simple scripting language
+Language of Hanoi is a simple scripting language based on the (Tower of Hanoi Puzzle)[https://en.wikipedia.org/wiki/Tower_of_Hanoi]
 
   
 ## Instructions
