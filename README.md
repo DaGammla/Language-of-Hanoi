@@ -18,9 +18,9 @@ When a stack is empty but is tried to be accessed, it throws a stack empty excep
 
 ## Conventions
 
-The script files of this language are usually stored with the "hanoi" extension. Like "script.hanoi".  
-Instructions can be written in uppercase, lowercase and even mixed but should be written in lowercase.  
-Function names can contain special characters and can contain letters of any case. However, the convention is that they do not contain special characters and start with a lowercase character. Every other word inside the function name should begin with an uppercase letter. Like "printEntireStack".  
+* The script files of this language are usually stored with the "hanoi" extension. Like "script.hanoi".  
+* Instructions can be written in uppercase, lowercase and even mixed but should be written in lowercase.  
+* Function names can contain special characters and can contain letters of any case. However, the convention is that they do not contain special characters and start with a lowercase character. Words inside the function name should not be seperated by underscores. Every other word inside the function name should begin with an uppercase letter. Like "printEntireStackA".  
   
 ## Instructions
 ### DUMP:
